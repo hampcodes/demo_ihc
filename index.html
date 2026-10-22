@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="menu">
+        <a class="logo" href="#">Mi sitio</a>
+        <button class="menu__toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </button>
+        <span class="barra">Hola</span>
+        <ul class="menu__lista">
+            <li><a class="menu__link" href="#">Inicio</a></li>
+            <li><a class="menu__link" href="#">Servicios</a></li>
+            <li><a class="menu__link menu__link--activo" href="#" aria-current="page">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="card">
+        <h1 class="card__titulo">Contáctanos</h1>
+        <p class="card__texto">Déjanos tu nombre y correo y te responderemos pronto.</p>
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre</label>
+                <input class="campo__input" id="nombre" name="nombre" type="text" placeholder="Tu nombre">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="correo">Correo</label>
+                <input class="campo__input" id="correo" name="correo" type="email" placeholder="tu@correo.com">
+            </div>
+            <button class="boton" type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script src="js/menu.js"></script>
+</body>
+</html>

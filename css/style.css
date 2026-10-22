@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--nav-height) var(--gutter) 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-md);
+}
+
+/* Nav */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--gutter);
+    background: var(--color-surface);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.logo {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.menu__lista {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu__lista--abierto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    padding: var(--space-5) var(--gutter);
+    background: var(--color-surface);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.menu__link {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.menu__link--activo {
+    color: var(--color-primary);
+}
+
+.menu__toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.menu__toggle .barra {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: var(--radius-sm);
+    background: var(--color-text);
+}
+
+/* Card y formulario */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    width: 100%;
+    max-width: var(--card-width);
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.card__titulo {
+    margin: 0;
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+}
+
+.card__texto {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.campo__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.campo__input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-md);
+    font: inherit;
+    color: var(--color-text);
+}
+
+.campo__input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.campo__input:focus-visible,
+.boton:focus-visible,
+.menu__toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.boton {
+    width: 100%;
+    padding: var(--space-4) 0;
+    background: var(--color-primary);
+    border: 0;
+    border-radius: var(--radius-md);
+    font: inherit;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+    .menu__toggle {
+        display: none;
+    }
+
+    .menu__lista,
+    .menu__lista--abierto {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-7);
+        position: static;
+        padding: 0;
+        border: 0;
+    }
+}
